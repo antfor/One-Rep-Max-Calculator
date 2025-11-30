@@ -36,9 +36,12 @@ pages:
     - main
   dependencies:
     - build
+  script:
+    - mkdir deploy
+    - mv dist/* deploy
   environment: 
     name: Production
   artifacts:
     paths:
-      - dist
+      - deploy
 
