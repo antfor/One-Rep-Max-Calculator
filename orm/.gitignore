@@ -1,3 +1,5 @@
+.vite/
+
 node_modules
 dist
 dist-ssr
