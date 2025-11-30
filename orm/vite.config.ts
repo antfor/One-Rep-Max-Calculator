@@ -4,7 +4,17 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), VitePWA({ registerType: 'autoUpdate' })],
+  plugins: [react(),
+  VitePWA({
+    registerType: 'autoUpdate',
+    includeAssets: ['orm.woff2', 'snake.json'],
+    manifest: {
+      name: 'One-Rep-Max Calculator',
+      short_name: 'One-Rep-Max',
+      description: 'Fill in the lifted weight and repetitions to estimate your one rep max.',
+    }
+  }),
+  ],
 
   base: "/orm/",
 
