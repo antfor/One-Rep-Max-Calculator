@@ -43,8 +43,10 @@ pages:
   dependencies:
     - build
   script:
+    - ls ./build 
     - mkdir public
     - mv build/* public
+    - ls ./public 
   environment: 
     name: Production
   artifacts:
