@@ -6,7 +6,7 @@ stages:
 
 cache:
   paths:
-    - ./front/website/node_modules/
+    - ./orm/node_modules/
 
 build:
   stage: build
@@ -14,21 +14,27 @@ build:
     - main
   before_script:
     #Website
+    - cd ./orm
     - rm -rf dist    
     - CI=false bun install
+    - cd ..
     #Compress
     - apk add --no-cache brotli
     - apk add --no-cache zstd
   script:
     #Website
+    - cd ./orm
     - CI=false bun run build $BUILD_ARGS
+    - cd ..
+    - mkdir build
+    - mv ./orm/dist/* build 
     #Compress
-    - find dist -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|xml\|json\|mjs\|svg\|yaml\|yml\|toml\|css\|pdf\)$' -exec gzip -f -k -9 {} \;
-    - find dist -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|xml\|json\|mjs\|svg\|yaml\|yml\|toml\|css\|pdf\)$' -exec brotli -f -k -Z {} \;
-    - find dist -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|xml\|json\|mjs\|svg\|yaml\|yml\|toml\|css\|pdf\)$' -exec zstd -f -k --ultra -22 -q {} \;
+    - find build -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|xml\|json\|mjs\|svg\|yaml\|yml\|toml\|css\|pdf\)$' -exec gzip -f -k -9 {} \;
+    - find build -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|xml\|json\|mjs\|svg\|yaml\|yml\|toml\|css\|pdf\)$' -exec brotli -f -k -Z {} \;
+    - find build -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|xml\|json\|mjs\|svg\|yaml\|yml\|toml\|css\|pdf\)$' -exec zstd -f -k --ultra -22 -q {} \;
   artifacts:
         paths:
-          - dist
+          - build
 
 pages:
   stage: deploy
@@ -37,11 +43,11 @@ pages:
   dependencies:
     - build
   script:
-    - mkdir deploy
-    - mv dist/* deploy
+    - mkdir public
+    - mv build/* public
   environment: 
     name: Production
   artifacts:
     paths:
-      - deploy
+      - public
 
