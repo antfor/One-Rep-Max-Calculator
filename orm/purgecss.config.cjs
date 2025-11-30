@@ -3,6 +3,6 @@ module.exports = {
     css: ['./dist/assets/**/*.css'],
     safelist: {
         standard: ['html', 'body', 'btn'],
-        deep: [/^btn/, /^gap/, /^table/, /tooltip.*/, /feedback$/] 
+        deep: [/^col/, /^container/, /^btn/, /^gap/, /^table/, /tooltip.*/, /feedback$/] 
     },
 };
