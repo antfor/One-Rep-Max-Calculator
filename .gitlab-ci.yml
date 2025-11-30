@@ -24,7 +24,7 @@ build:
   script:
     #Website
     - cd ./orm
-    - CI=false bun run build $BUILD_ARGS
+    - CI=false bun run build
     - cd ..
     - mkdir build
     - mv ./orm/dist/* build 
@@ -43,12 +43,8 @@ pages:
   dependencies:
     - build
   script:
-    - ls ./build 
     - mkdir public
     - mv build/* public
-    - ls ./public 
-  environment: 
-    name: Production
   artifacts:
     paths:
       - public
