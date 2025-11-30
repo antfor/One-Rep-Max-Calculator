@@ -12,7 +12,7 @@ export function Snake() {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        path: "/orm/snake.json"
+        path: "/snake.json"
       });
     }
 
