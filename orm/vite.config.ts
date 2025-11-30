@@ -10,21 +10,6 @@ export default defineConfig({
     allowedHosts: ['local.anton-forsberg.com'],
   },
 
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react')) return 'react'; 
-            if (id.includes('lottie-web')) return 'lottie';
-            if (id.includes('@fortawesome')) return 'icons';
-            return 'vendor';
-          }
-        },
-      },
-    },
-  },
-
   css: {
     preprocessorOptions: {
       scss: {
