@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
 
+  base: "/orm/",
+
   server: {
     host: 'local.anton-forsberg.com',
     allowedHosts: ['local.anton-forsberg.com'],
@@ -15,9 +17,10 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react')) return 'react'; 
-            if (id.includes('lottie-web')) return 'lottie-web';
-            if (id.includes('@fortawesome')) return '@fortawesome';
+            if (id.includes('/react/')) return 'react';
+            if (id.includes('/react-dom/')) return 'react-dom';
+            if (id.includes('lottie-web')) return 'lottie';
+            if (id.includes('@fortawesome')) return 'icons';
             return 'vendor';
           }
         },
