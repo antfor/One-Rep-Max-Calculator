@@ -16,6 +16,16 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
       },
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) return 'react'; 
+            if (id.includes('lottie-web')) return 'lottie';
+            if (id.includes('@fortawesome')) return 'icons';
+            return 'vendor';
+          }
+        },
+      },
     },
   },
 
