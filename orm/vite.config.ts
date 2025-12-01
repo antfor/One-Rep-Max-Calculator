@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),
   VitePWA({
     registerType: 'autoUpdate',
-    includeAssets: ['orm.woff2', 'snake.json'],
+    includeAssets: ['orm.woff2','oswald.woff2', 'snake.json'],
     manifest: {
       name: 'One-Rep-Max Calculator',
       short_name: 'One-Rep-Max',
