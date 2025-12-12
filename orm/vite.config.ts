@@ -12,7 +12,7 @@ export default defineConfig({
       name: 'One-Rep-Max Calculator',
       short_name: 'One-Rep-Max',
       description: 'Fill in the lifted weight and repetitions to estimate your one rep max.',
-      start_url: '/orm/',
+      start_url: '/orm',
       display: 'standalone',
       background_color: "#23373a",
       theme_color: "#262a2e",
