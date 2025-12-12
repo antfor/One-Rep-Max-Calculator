@@ -12,6 +12,18 @@ export default defineConfig({
       name: 'One-Rep-Max Calculator',
       short_name: 'One-Rep-Max',
       description: 'Fill in the lifted weight and repetitions to estimate your one rep max.',
+      icons: [
+      {
+        src: 'snake-logo-192.png',
+        sizes: '192x192',
+        type: 'image/png'
+      },
+      {
+        src: 'snake-logo-512.png',
+        sizes: '512x512',
+        type: 'image/png'
+      }
+    ]
     }
   }),
   ],
