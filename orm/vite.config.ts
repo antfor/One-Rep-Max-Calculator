@@ -15,7 +15,7 @@ export default defineConfig({
       start_url: '/orm/',
       display: 'standalone',
       background_color: "#23373a",
-      theme_color: "#262a2e",
+      theme_color: "#23373a",
       icons: [
       {
         src: 'snake-logo-192.png',
