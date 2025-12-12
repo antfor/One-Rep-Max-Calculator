@@ -1,1 +1,23 @@
-* text eol=lf
+# Default: normalize text files to LF
+* text=auto eol=lf
+
+# Binary files (must not be normalized)
+*.png    -text
+*.jpg    -text
+*.jpeg   -text
+*.gif    -text
+*.ico    -text
+*.woff   -text
+*.woff2  -text
+*.ttf    -text
+*.otf    -text
+*.pdf    -text
+*.zip    -text
+*.gz     -text
+*.exe    -text
+*.dll    -text
+*.mp4    -text
+*.webm   -text
+*.mov    -text
+*.bin    -text
+
