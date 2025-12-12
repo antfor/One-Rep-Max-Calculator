@@ -7,11 +7,15 @@ export default defineConfig({
   plugins: [react(),
   VitePWA({
     registerType: 'autoUpdate',
-    includeAssets: ['orm.woff2','oswald.woff2', 'snake.json'],
+    includeAssets: ['orm.woff2','oswald.woff2', 'snake.json', 'favicon.svg', 'snake-logo-180.png'],
     manifest: {
       name: 'One-Rep-Max Calculator',
       short_name: 'One-Rep-Max',
       description: 'Fill in the lifted weight and repetitions to estimate your one rep max.',
+      start_url: '/',
+      display: 'standalone',
+      background_color: "#23373a",
+      theme_color: "#262a2e",
       icons: [
       {
         src: 'snake-logo-192.png',
