@@ -18,7 +18,7 @@ export default defineConfig({
       scope: '/orm/',
 
       display: 'standalone',
-      display_override: ['standalone', 'minimal-ui'],
+      display_override: ['standalone', 'minimal-ui','window-controls-overlay'],
       orientation: 'portrait',
       
       background_color: "#23373a",
@@ -30,12 +30,14 @@ export default defineConfig({
       {
         src: 'snake-logo-192.png',
         sizes: '192x192',
-        type: 'image/png'
+        type: 'image/png',
+        purpose: 'any'
       },
       {
         src: 'snake-logo-512.png',
         sizes: '512x512',
-        type: 'image/png'
+        type: 'image/png',
+        purpose: 'any'
       },
       {
         src: 'snake-logo-maskable-512.png',
