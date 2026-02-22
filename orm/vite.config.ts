@@ -12,10 +12,20 @@ export default defineConfig({
       name: 'One-Rep-Max Calculator',
       short_name: 'One-Rep-Max',
       description: 'Fill in the lifted weight and repetitions to estimate your one rep max.',
+      
+      id: '/orm/',
       start_url: '/orm/',
+      scope: '/orm/',
+
       display: 'standalone',
+      display_override: ['standalone', 'minimal-ui'],
+      orientation: 'portrait',
+      
       background_color: "#23373a",
       theme_color: "#23373a",
+
+      prefer_related_applications: false, 
+      categories: ["fitness", "health", "utilities"],
       icons: [
       {
         src: 'snake-logo-192.png',
@@ -26,9 +36,33 @@ export default defineConfig({
         src: 'snake-logo-512.png',
         sizes: '512x512',
         type: 'image/png'
+      },
+      {
+        src: 'snake-logo-maskable-512.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'maskable'
       }
-    ]
-    }
+    ],
+    screenshots: [
+      {
+        src: "screenshots/screenshot-mobile-540.jpeg",
+        sizes: "540x720",
+        type: "image/jpeg",
+        form_factor: "narrow"
+      },
+      {
+        src: "screenshots/screenshot-desktop-1280.jpeg",
+        sizes: "1280x720",
+        type: "image/jpeg",
+        form_factor: "wide"
+      }
+    ] 
+    },
+    
+    workbox: {
+      navigateFallback: '/orm/index.html'
+    },
   }),
   ],
 
