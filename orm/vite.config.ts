@@ -43,7 +43,7 @@ export default defineConfig({
         src: 'snake-logo-maskable-512.png',
         sizes: '512x512',
         type: 'image/png',
-        purpose: 'maskable'
+        purpose: 'any maskable'
       }
     ],
     screenshots: [
