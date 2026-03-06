@@ -10,7 +10,7 @@ export default defineConfig({
     includeAssets: ['orm.woff2','oswald.woff2', 'snake.json', 'favicon.svg', 'snake-logo-180.png'],
     manifest: {
       name: 'One-Rep-Max Calculator',
-      short_name: 'One-Rep-Max',
+      short_name: 'O-R-M',
       description: 'Fill in the lifted weight and repetitions to estimate your one rep max.',
       
       id: '/orm/',
